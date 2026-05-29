@@ -7,9 +7,20 @@ import pydeck as pdk
 import folium
 from streamlit_folium import st_folium
 import time
-
-
 import base64
+import os
+
+import os
+st.write("Fichiers dans le dossier actuel :", os.listdir('.'))
+
+def ajouter_fond(image_file):
+    # On force Python à chercher l'image exactement au même endroit que app.py
+    dossier_actuel = os.path.dirname(os.path.abspath(__file__))
+    chemin_complet = os.path.join(dossier_actuel, image_file)
+    
+    with open(chemin_complet, "rb") as image:
+        encoded_string = base64.b64encode(image.read()).decode()
+    return encoded_string
 
 def ajouter_fond(image_file):
     with open(image_file, "rb") as image:
@@ -29,7 +40,7 @@ def ajouter_fond(image_file):
     st.markdown(css, unsafe_allow_html=True)
 
 # Activation de l'image de fond
-ajouter_fond("ImageA.jpg")
+ajouter_fond("imagea.jpg")
  
 st.title("🏡 HabitatScore 2026")
 
