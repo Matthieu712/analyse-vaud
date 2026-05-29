@@ -10,8 +10,6 @@ import time
 import base64
 import os
 
-import os
-st.write("Fichiers dans le dossier actuel :", os.listdir('.'))
 
 def ajouter_fond(image_file):
     # On force Python à chercher l'image exactement au même endroit que app.py
