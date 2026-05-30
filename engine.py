@@ -81,9 +81,12 @@ def log_per_capita(mon_df, ma_colonne, colonne_population):
 
 def fonction_z_score(mon_df, ma_colonne):
     nom_var = f"{ma_colonne}_transitoire"
-    mon_df[nom_var] = (mon_df[ma_colonne] - mon_df[ma_colonne].mean()) / mon_df[ma_colonne].std()
+    
+    # Utilise la colonne transitoire (log) si elle existe, sinon la brute
+    col_calc = nom_var if nom_var in mon_df.columns else ma_colonne
+    
+    mon_df[nom_var] = (mon_df[col_calc] - mon_df[col_calc].mean()) / mon_df[col_calc].std()
     return mon_df
-
 def changement_polarité(mon_df, ma_colonne):
     nom_var = f"{ma_colonne}_transitoire"
     mon_df[nom_var] = mon_df[nom_var] * (-1)
