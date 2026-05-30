@@ -644,11 +644,11 @@
 8504571;La Sauge (bateau);Lacs de Neuchâtel et Morat;BOAT;VD;Cudrefin;5456;Cudrefin;ch:1:sboid:100148;;2570735.347;1202813.902;431;46.97574539454502, 7.054029758709886
 8570527;Champmartin;PostAuto AG;BUS;VD;Cudrefin;5456;Cudrefin;ch:1:sboid:100602;;2566433;1198928;464;46.94058737608919, 6.997776311112488
 8583829;Cudrefin, Le Moulin;PostAuto AG;BUS;VD;Cudrefin;5456;Cudrefin;ch:1:sboid:100602;;2568165;1200123;442;46.95142199327665, 7.020439395758781
-8591940;Cugy (VD) VD, Cavenette;Transports Publics de la Région Lausannoise sa;BUS;VD;Cugy (VD) (VD);5516;Cugy (VD) VD;ch:1:sboid:100122;;2538452;1159076;693;46.58011316841779, 6.635670992495257
-8507540;Cugy (VD) VD, Grillon;Transports Publics de la Région Lausannoise sa;BUS;VD;Cugy (VD) (VD);5516;Cugy (VD) VD;ch:1:sboid:100122;;2538814;1159933;701.8;46.58785526053463, 6.640279411590169
-8504178;Cugy (VD) VD, poste;Transports Publics de la Région Lausannoise sa;BUS;VD;Cugy (VD) (VD);5516;Cugy (VD) VD;ch:1:sboid:100122;;2538705;1159474;700;46.58371650582963, 6.638918429543164
-8573634;Cugy (VD) VD, village;Transports Publics de la Région Lausannoise sa;BUS;VD;Cugy (VD) (VD);5516;Cugy (VD) VD;ch:1:sboid:100122;;2538831;1159667;699;46.58546412299946, 6.640536584935372
-8570164;Cugy (VD) VD, Le Moulin;Transports Publics de la Région Lausannoise sa;BUS;VD;Cugy (VD) (VD);5516;Cugy (VD) VD;ch:1:sboid:100122;;2538992;1160050;700;46.58892398733085, 6.642586290421303
+8591940;Cugy (VD) VD, Cavenette;Transports Publics de la Région Lausannoise sa;BUS;VD;Cugy (VD);5516;Cugy (VD);ch:1:sboid:100122;;2538452;1159076;693;46.58011316841779, 6.635670992495257
+8507540;Cugy (VD) VD, Grillon;Transports Publics de la Région Lausannoise sa;BUS;VD;Cugy (VD);5516;Cugy (VD);ch:1:sboid:100122;;2538814;1159933;701.8;46.58785526053463, 6.640279411590169
+8504178;Cugy (VD) VD, poste;Transports Publics de la Région Lausannoise sa;BUS;VD;Cugy (VD);5516;Cugy (VD);ch:1:sboid:100122;;2538705;1159474;700;46.58371650582963, 6.638918429543164
+8573634;Cugy (VD) VD, village;Transports Publics de la Région Lausannoise sa;BUS;VD;Cugy (VD);5516;Cugy (VD);ch:1:sboid:100122;;2538831;1159667;699;46.58546412299946, 6.640536584935372
+8570164;Cugy (VD) VD, Le Moulin;Transports Publics de la Région Lausannoise sa;BUS;VD;Cugy (VD);5516;Cugy (VD);ch:1:sboid:100122;;2538992;1160050;700;46.58892398733085, 6.642586290421303
 8591865;Curtilles, village;PostAuto AG;BUS;VD;Curtilles;5669;Curtilles;ch:1:sboid:100602;;2554903;1172208;520;46.69955393489173, 6.8489940739032775
 8515319;Daillens (bif);Schweizerische Bundesbahnen SBB;;VD;Daillens;5480;Daillens;ch:1:sboid:100001;(Zug);2531684.457;1165528.873;445.045;46.63749808706161, 6.5464284818957905
 8501298;Daillens, village;PostAuto AG;BUS;VD;Daillens;5480;Daillens;ch:1:sboid:100602;;2531705;1163651;499;46.620608806619856, 6.546975955707627
