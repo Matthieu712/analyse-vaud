@@ -143,38 +143,38 @@ h = st.sidebar.slider("Disponibilité logements", 1, 5, 3)
 df_merge = engine.fonction_z_score(df_merge, "Moyenne_appart")
 df_merge = engine.changement_polarité(df_merge, "Moyenne_appart")
 df_merge = engine.fonction_norm(df_merge, "Moyenne_appart")
-#df_merge = engine.fonction_mulitplication_notes(df_merge, "Moyenne_appart", a)
+df_merge = engine.fonction_mulitplication_notes(df_merge, "Moyenne_appart", a)
 
 
 #Prix appartements
 df_merge = engine.fonction_z_score(df_merge, "Moyenne_maison")
 df_merge = engine.changement_polarité(df_merge, "Moyenne_maison")
 df_merge = engine.fonction_norm(df_merge, "Moyenne_maison")
-#df_merge = engine.fonction_mulitplication_notes(df_merge, "Moyenne_maison", b)
+df_merge = engine.fonction_mulitplication_notes(df_merge, "Moyenne_maison", b)
 
 
 #Desserte transports publiques
 df_merge = engine.fonction_z_score(df_merge, "Poids")
 df_merge = engine.fonction_norm(df_merge, "Poids")
-#df_merge = engine.fonction_mulitplication_notes(df_merge, "Poids", c)
+df_merge = engine.fonction_mulitplication_notes(df_merge, "Poids", c)
 
 #Offre commerces
 df_merge = engine.log_per_capita(df_merge, "nb établissements commerciaux", "Total")
 df_merge = engine.fonction_z_score(df_merge, "nb établissements commerciaux")
 df_merge = engine.fonction_norm(df_merge, "nb établissements commerciaux")
-#df_merge = engine.fonction_mulitplication_notes(df_merge, "nb établissements commerciaux", d)
+df_merge = engine.fonction_mulitplication_notes(df_merge, "nb établissements commerciaux", d)
 
 #Qualité de l'air
 df_merge = engine.fonction_z_score(df_merge, "Indice (IQA)")
 df_merge = engine.changement_polarité(df_merge, "Indice (IQA)")
 df_merge = engine.fonction_norm(df_merge, "Indice (IQA)")
-#df_merge = engine.fonction_mulitplication_notes(df_merge, "Indice (IQA)", e)
+df_merge = engine.fonction_mulitplication_notes(df_merge, "Indice (IQA)", e)
 
 #Offre de place de divertissements
 df_merge = engine.log_per_capita(df_merge, "Total places", "Total")
 df_merge = engine.fonction_z_score(df_merge, "Total places")
 df_merge = engine.fonction_norm(df_merge, "Total places")
-#df_merge = engine.fonction_mulitplication_notes(df_merge, "Total places", f)
+df_merge = engine.fonction_mulitplication_notes(df_merge, "Total places", f)
 
 #Coefficient fiscaux communaux
 df_merge = engine.fonction_z_score(df_merge, "Impôt rentrée argent")
@@ -186,11 +186,11 @@ df_merge = engine.fonction_norm(df_merge, "Impôt rentrée argent")
 df_merge = engine.log_per_capita(df_merge, "Total logements vacants", "Total")
 df_merge = engine.fonction_z_score(df_merge, "Total logements vacants")
 df_merge = engine.fonction_norm(df_merge, "Total logements vacants")
-#df_merge = engine.fonction_mulitplication_notes(df_merge, "Total logements vacants", h)
+df_merge = engine.fonction_mulitplication_notes(df_merge, "Total logements vacants", h)
 
 # 4. Calcul Score Final
-#cols_transitoires = [col for col in df_merge.columns if "_transitoire" in col]
-#df_merge["Score_final"] = df_merge[cols_transitoires].sum(axis=1)
+cols_transitoires = [col for col in df_merge.columns if "_transitoire" in col]
+df_merge["Score_final"] = df_merge[cols_transitoires].sum(axis=1)
 
 df_merge.to_excel("hhhHHH.xlsx",index = False)
 print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
