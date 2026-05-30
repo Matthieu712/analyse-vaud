@@ -154,7 +154,6 @@ df_merge = engine.fonction_mulitplication_notes(df_merge, "Moyenne_maison", b, 0
 
 
 #Desserte transports publiques
-df_merge = engine.log_per_capita(df_merge, "Poids", "Total")
 df_merge = engine.fonction_z_score(df_merge, "Poids")
 df_merge = engine.fonction_norm(df_merge, "Poids")
 df_merge = engine.fonction_mulitplication_notes(df_merge, "Poids", c, 0.6)
