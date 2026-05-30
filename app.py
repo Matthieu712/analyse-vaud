@@ -143,14 +143,14 @@ h = st.sidebar.slider("Disponibilité logements", 1, 5, 3)
 df_merge = engine.fonction_z_score(df_merge, "Moyenne_appart")
 df_merge = engine.changement_polarité(df_merge, "Moyenne_appart")
 df_merge = engine.fonction_norm(df_merge, "Moyenne_appart")
-df_merge = engine.fonction_mulitplication_notes(df_merge, "Moyenne_appart", a)
+df_merge = engine.fonction_mulitplication_notes(df_merge, "Moyenne_appart", a, 0.8)
 
 
 #Prix appartements
 df_merge = engine.fonction_z_score(df_merge, "Moyenne_maison")
 df_merge = engine.changement_polarité(df_merge, "Moyenne_maison")
 df_merge = engine.fonction_norm(df_merge, "Moyenne_maison")
-df_merge = engine.fonction_mulitplication_notes(df_merge, "Moyenne_maison", b)
+df_merge = engine.fonction_mulitplication_notes(df_merge, "Moyenne_maison", b, 0.7)
 
 
 #Desserte transports publiques
@@ -171,7 +171,6 @@ df_merge = engine.fonction_norm(df_merge, "Indice (IQA)")
 df_merge = engine.fonction_mulitplication_notes(df_merge, "Indice (IQA)", e)
 
 #Offre de place de divertissements
-df_merge = engine.log_per_capita(df_merge, "Total places", "Total")
 df_merge = engine.fonction_z_score(df_merge, "Total places")
 df_merge = engine.fonction_norm(df_merge, "Total places")
 df_merge = engine.fonction_mulitplication_notes(df_merge, "Total places", f)
