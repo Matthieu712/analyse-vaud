@@ -87,6 +87,7 @@ def fonction_z_score(mon_df, ma_colonne):
     
     mon_df[nom_var] = (mon_df[col_calc] - mon_df[col_calc].mean()) / mon_df[col_calc].std()
     return mon_df
+
 def changement_polarité(mon_df, ma_colonne):
     nom_var = f"{ma_colonne}_transitoire"
     mon_df[nom_var] = mon_df[nom_var] * (-1)

@@ -11,24 +11,27 @@ import base64
 import os
 
 
+#git add .
+#git commit -m "Correction image de fond"
+#git push
+
+
+
 def ajouter_fond(image_file):
-    # On force Python à chercher l'image exactement au même endroit que app.py
+    # 1. Gestion sécurisée du chemin (local vs cloud)
     dossier_actuel = os.path.dirname(os.path.abspath(__file__))
     chemin_complet = os.path.join(dossier_actuel, image_file)
     
+    # 2. Encodage Base64
     with open(chemin_complet, "rb") as image:
         encoded_string = base64.b64encode(image.read()).decode()
-    return encoded_string
-
-def ajouter_fond(image_file):
-    with open(image_file, "rb") as image:
-        encoded_string = base64.b64encode(image.read()).decode()
     
+    # 3. Injection CSS propre
     css = f"""
     <style>
     .stApp {{
         background-image: url("data:image/jpeg;base64,{encoded_string}");
-        background-size: contain;
+        background-size: cover; /* Ajuste tout l'écran. Utilise '100% 100%' si tu veux forcer sans coupure */
         background-repeat: no-repeat;
         background-position: center;
         background-attachment: fixed;
@@ -39,7 +42,6 @@ def ajouter_fond(image_file):
 
 # Activation de l'image de fond
 ajouter_fond("imagea.jpg")
- 
 st.title("🏡 HabitatScore 2026")
 
 def get_final_data(chemin_gpkg, df_merge):
@@ -191,8 +193,6 @@ df_merge = engine.fonction_mulitplication_notes(df_merge, "Total logements vacan
 cols_transitoires = [col for col in df_merge.columns if "_transitoire" in col]
 df_merge["Score_final"] = df_merge[cols_transitoires].sum(axis=1)
 
-df_merge.to_excel("hhhHHH.xlsx",index = False)
-print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
 
 # Tri et sélection des colonnes
 df_classement = df_merge[['Commune', 'Score_final']].sort_values(by='Score_final', ascending=False).reset_index(drop=True)
