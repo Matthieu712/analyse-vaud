@@ -31,7 +31,7 @@ def ajouter_fond(image_file):
     <style>
     .stApp {{
         background-image: url("data:image/jpeg;base64,{encoded_string}");
-        background-size: 80% 80%;; /* Ajuste tout l'écran. Utilise '100% 100%' si tu veux forcer sans coupure */
+        background-size: cover; /* Ajuste tout l'écran. Utilise '100% 100%' si tu veux forcer sans coupure */
         background-repeat: no-repeat;
         background-position: center;
         background-attachment: fixed;
