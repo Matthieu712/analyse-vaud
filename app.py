@@ -193,6 +193,22 @@ df_merge = engine.fonction_mulitplication_notes(df_merge, "Total logements vacan
 cols_transitoires = [col for col in df_merge.columns if "_transitoire" in col]
 df_merge["Score_final"] = df_merge[cols_transitoires].sum(axis=1)
 
+liste_en_têtes = list(df_merge.columns)
+
+liste_justification = ["Accessibilité achat appartement",
+                           "Accessibilité achat maison",
+                           "Offre transports publiques",
+                           "Offre commerces et services",
+                           "Qualité de l'air",
+                           "Offre place de sports et loisirs",
+                           "Charge fiscale modérée",
+                           "Nomre de logements à louer"]
+
+dictionnaire_justification = dict(zip(liste_en_têtes, liste_justification))
+
+df_merge["Score_final"] = df_merge[liste_en_têtes].sum(axis = 1)
+df_merge["Justification"] = df_merge[liste_en_têtes].idxmax(axis = 1)
+
 
 # Tri et sélection des colonnes
 df_classement = df_merge[['Commune', 'Score_final']].sort_values(by='Score_final', ascending=False).reset_index(drop=True)
@@ -268,8 +284,8 @@ with st.spinner('Dessin de la carte et calcul du dégradé...'):
                 df_carte,
                 style_function=style_gradient,
                 tooltip=folium.GeoJsonTooltip(
-                    fields=['Commune', 'Score_final'],
-                    aliases=['Commune :', 'Score :']
+                    fields=['Commune', 'Score_final', "Justification"],
+                    aliases=['Commune :', 'Score :', "Raison du choix"]
                 )
             ).add_to(m)
             
