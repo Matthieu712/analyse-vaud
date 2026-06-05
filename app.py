@@ -290,7 +290,7 @@ with st.spinner('Dessin de la carte et calcul du dégradé...'):
                 style_function=style_gradient,
                 tooltip=folium.GeoJsonTooltip(
                     fields=['Commune', 'Score_final', 'Justification'],
-                    aliases=['Commune :', 'Score :', "Motifs principal"]
+                    aliases=['Commune :', 'Score :', "Motif principal"]
                 )
             ).add_to(m)
             
