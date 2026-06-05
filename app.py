@@ -206,7 +206,7 @@ liste_justification = ["Accessibilité achat appartement",
 
 dictionnaire_justification = dict(zip(liste_en_têtes, liste_justification))
 
-df_merge["Score_final"] = df_merge[liste_en_têtes].sum(axis = 1)
+
 df_merge["Justification"] = df_merge[liste_en_têtes].idxmax(axis = 1)
 
 
