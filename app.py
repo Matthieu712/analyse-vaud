@@ -231,6 +231,8 @@ with st.spinner('Dessin de la carte et calcul du dégradé...'):
         # Tri et indexation : les 10 premiers (index 0-9) et le dernier (index 10)
         df_carte = df_carte.sort_values(by='Score_final', ascending=False).reset_index(drop=True)
 
+        df_carte['Score_final'] = df_carte['Score_final'].round(2)
+
         # Palette : 10 bleus (foncé à clair) + 1 rouge pour la dernière
         couleurs = [
             '#08306b', # Rank 0 (Meilleur) - Bleu très foncé
