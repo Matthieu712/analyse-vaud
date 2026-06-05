@@ -294,7 +294,7 @@ with st.spinner('Dessin de la carte et calcul du dégradé...'):
                 )
             ).add_to(m)
             
-            m = folium.Map(location=[46.55, 6.63], zoom_start=9.5)
+            m.fit_bounds(m.get_bounds())
             
             import time
             from streamlit_folium import st_folium 
