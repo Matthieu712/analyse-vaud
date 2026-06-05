@@ -209,6 +209,9 @@ dictionnaire_justification = dict(zip(liste_en_têtes, liste_justification))
 df_merge["Score_final"] = df_merge[liste_en_têtes].sum(axis = 1)
 df_merge["Justification"] = df_merge[liste_en_têtes].idxmax(axis = 1)
 
+df_merge.to_excel("skdjg.xlsx", index = False)
+print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+
 
 # Tri et sélection des colonnes
 df_classement = df_merge[['Commune', 'Score_final']].sort_values(by='Score_final', ascending=False).reset_index(drop=True)
@@ -218,6 +221,8 @@ df_classement.insert(0, 'Rang', range(1, len(df_classement) + 1))
 # 5. Affichage
 st.subheader("Communes (Score final)")
 st.dataframe(df_classement, hide_index=True)
+
+
 
 #-----------------------------------------------------------------
 #***********************CARTE DYNAMIQUE (TOP 10 BLEU + 1 ROUGE)***
@@ -284,8 +289,8 @@ with st.spinner('Dessin de la carte et calcul du dégradé...'):
                 df_carte,
                 style_function=style_gradient,
                 tooltip=folium.GeoJsonTooltip(
-                    fields=['Commune', 'Score_final', "Justification"],
-                    aliases=['Commune :', 'Score :', "Raison du choix"]
+                    fields=['Commune', 'Score_final'],
+                    aliases=['Commune :', 'Score :']
                 )
             ).add_to(m)
             
