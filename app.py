@@ -203,7 +203,7 @@ liste_justification = ["Accessibilité achat appartement",
                            "Qualité de l'air",
                            "Offre place de sports et loisirs",
                            "Charge fiscale modérée",
-                           "Nomre de logements à louer"]
+                           "Nombre de logements à louer"]
 
 dictionnaire_justification = dict(zip(cols_transitoires, liste_justification))
 
